@@ -188,7 +188,6 @@ class SideTitles with EquatableMixin {
     this.interval,
     this.minIncluded = true,
     this.maxIncluded = true,
-    this.isMillisecondsSinceEpoch = false,
   }) : assert(interval != 0, "SideTitles.interval couldn't be zero");
 
   /// Determines showing or hiding this side titles
@@ -219,9 +218,6 @@ class SideTitles with EquatableMixin {
   /// independent of the sampling interval
   final bool maxIncluded;
 
-  /// It is false by default. for very large numbers and millisecondsSinceEpoch change it to true
-  final bool isMillisecondsSinceEpoch;
-
   /// Lerps a [SideTitles] based on [t] value, check [Tween.lerp].
   static SideTitles lerp(SideTitles a, SideTitles b, double t) => SideTitles(
         showTitles: b.showTitles,
@@ -230,7 +226,6 @@ class SideTitles with EquatableMixin {
         interval: lerpDouble(a.interval, b.interval, t),
         minIncluded: b.minIncluded,
         maxIncluded: b.maxIncluded,
-        isMillisecondsSinceEpoch: b.isMillisecondsSinceEpoch
       );
 
   /// Copies current [SideTitles] to a new [SideTitles],
@@ -242,7 +237,6 @@ class SideTitles with EquatableMixin {
     double? interval,
     bool? minIncluded,
     bool? maxIncluded,
-    bool? isMillisecondsSinceEpoch,
   }) =>
       SideTitles(
         showTitles: showTitles ?? this.showTitles,
@@ -251,7 +245,6 @@ class SideTitles with EquatableMixin {
         interval: interval ?? this.interval,
         minIncluded: minIncluded ?? this.minIncluded,
         maxIncluded: maxIncluded ?? this.maxIncluded,
-        isMillisecondsSinceEpoch: isMillisecondsSinceEpoch ?? this.isMillisecondsSinceEpoch
       );
 
   /// Used for equality check, see [EquatableMixin].
@@ -263,7 +256,6 @@ class SideTitles with EquatableMixin {
         interval,
         minIncluded,
         maxIncluded,
-        isMillisecondsSinceEpoch
       ];
 }
 

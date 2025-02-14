@@ -27,10 +27,12 @@ class AxisChartHelper {
     bool maxIncluded = true,
     required double baseLine,
     required double interval,
-     bool isMillisecondsSinceEpoch = false,
   }) sync* {
-    final initialValue = isMillisecondsSinceEpoch ? min : Utils()
-        .getBestInitialIntervalValue(min, max, interval, baseline: baseLine);
+    // final initialValue = Utils()
+    //     .getBestInitialIntervalValue(min, max, interval, baseline: baseLine);
+
+    final initialValue = min; 
+        
     var axisSeek = initialValue;
     final firstPositionOverlapsWithMin = axisSeek == min;
     if (!minIncluded && firstPositionOverlapsWithMin) {
