@@ -230,6 +230,7 @@ class SideTitles with EquatableMixin {
         interval: lerpDouble(a.interval, b.interval, t),
         minIncluded: b.minIncluded,
         maxIncluded: b.maxIncluded,
+        isMillisecondsSinceEpoch: b.isMillisecondsSinceEpoch
       );
 
   /// Copies current [SideTitles] to a new [SideTitles],
@@ -241,6 +242,7 @@ class SideTitles with EquatableMixin {
     double? interval,
     bool? minIncluded,
     bool? maxIncluded,
+    bool? isMillisecondsSinceEpoch,
   }) =>
       SideTitles(
         showTitles: showTitles ?? this.showTitles,
@@ -249,6 +251,7 @@ class SideTitles with EquatableMixin {
         interval: interval ?? this.interval,
         minIncluded: minIncluded ?? this.minIncluded,
         maxIncluded: maxIncluded ?? this.maxIncluded,
+        isMillisecondsSinceEpoch: isMillisecondsSinceEpoch ?? this.isMillisecondsSinceEpoch
       );
 
   /// Used for equality check, see [EquatableMixin].
@@ -260,6 +263,7 @@ class SideTitles with EquatableMixin {
         interval,
         minIncluded,
         maxIncluded,
+        isMillisecondsSinceEpoch
       ];
 }
 
