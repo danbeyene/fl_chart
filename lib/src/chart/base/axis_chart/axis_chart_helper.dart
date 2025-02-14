@@ -27,8 +27,9 @@ class AxisChartHelper {
     bool maxIncluded = true,
     required double baseLine,
     required double interval,
+     bool isMillisecondsSinceEpoch = false,
   }) sync* {
-    final initialValue = Utils()
+    final initialValue = isMillisecondsSinceEpoch ? min : Utils()
         .getBestInitialIntervalValue(min, max, interval, baseline: baseLine);
     var axisSeek = initialValue;
     final firstPositionOverlapsWithMin = axisSeek == min;

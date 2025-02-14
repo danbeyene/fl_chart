@@ -72,6 +72,7 @@ abstract class AxisChartPainter<D extends AxisChartData>
         maxIncluded: false,
         baseLine: data.baselineX,
         interval: verticalInterval,
+        isMillisecondsSinceEpoch: data.titlesData.bottomTitles.sideTitles.isMillisecondsSinceEpoch
       );
       for (final axisValue in axisValues) {
         if (!data.gridData.checkToShowVerticalLine(axisValue)) {
@@ -117,6 +118,7 @@ abstract class AxisChartPainter<D extends AxisChartData>
         maxIncluded: false,
         baseLine: data.baselineY,
         interval: horizontalInterval,
+        isMillisecondsSinceEpoch: data.titlesData.bottomTitles.sideTitles.isMillisecondsSinceEpoch
       );
       for (final axisValue in axisValues) {
         if (!data.gridData.checkToShowHorizontalLine(axisValue)) {
